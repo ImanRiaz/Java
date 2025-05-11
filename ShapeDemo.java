@@ -1,49 +1,46 @@
-// Interface
-interface Shape {
+/*Create an interface Shape with a method double area();.
+Implement this interface in two classes:
+•	Circle (with radius)
+•	Rectangle (with length and width)
+Use the main() method to take input and print area for both shapes.
+*/
+
+interface Shape{
     double area();
 }
 
-// Circle class
-class Circle implements Shape {
+class Circle implements Shape{
     private double radius;
 
-    // Constructor
-    public Circle(double radius) {
-        this.radius = radius;
+    public Circle(double r){
+        this.radius=r;
     }
 
-    // Implement area()
-    public double area() {
-        return Math.PI * radius * radius;
+    public double area(){
+        return Math.PI*radius*radius;
     }
 }
 
-// Rectangle class
-class Rectangle implements Shape {
+class Rectangle implements Shape{
     private double length;
     private double width;
 
-    // Constructor
-    public Rectangle(double length, double width) {
-        this.length = length;
-        this.width = width;
+    public Rectangle (double l,double w){
+        this.length=l;
+        this.width=w;
     }
 
-    // Implement area()
-    public double area() {
-        return length * width;
+    public double area(){
+        return length*width;
     }
 }
 
-// Main class
-public class ShapeDemo {
+public class ShapeDemo{
     public static void main(String[] args) {
-        // Hardcoded values
-        Circle circle = new Circle(5.0); // radius = 5.0
-        Rectangle rectangle = new Rectangle(4.0, 6.0); // length = 4.0, width = 6.0
+        Circle c=new Circle(5.0);
+        Rectangle r=new Rectangle(5.0,6.0);
 
-        // Print areas
-        System.out.println("Area of Circle: " + circle.area());
-        System.out.println("Area of Rectangle: " + rectangle.area());
+        System.out.println("Area of Circle: "+ c.area());
+        System.out.println("Area of Rectangle: "+ r.area());
     }
 }
